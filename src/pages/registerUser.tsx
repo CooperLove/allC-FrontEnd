@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 export const registerUser = (props) => {
   return (
     <div>registerUsdsadsaer
-        <div>dsadsa</div>
+        <div>dsadvcxzvc xzvxc sa</div>
     </div>
   )
 }
