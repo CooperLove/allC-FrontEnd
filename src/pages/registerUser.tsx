@@ -5,6 +5,7 @@ export const registerUser = (props) => {
   return (
     <div>registerUsdsadsaer
         <div>dsadvcxzvc xzvxc sa</div>
+        <div>dsadvcxzvc xzvxc sa</div>
     </div>
   )
 }
