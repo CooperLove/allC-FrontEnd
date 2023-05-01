@@ -1,17 +1,7 @@
-import React from 'react'
-import { connect } from 'react-redux'
+import React from "react";
 
-export const registerUser = (props) => {
-  return (
-    <div>registerUsdsadsaer
-        <div>dsadvcxzvc xzvxc sa</div>
-        <div>dsadvcxzvc xzvxc sa</div>
-    </div>
-  )
+function registerUser() {
+  return <div>registerUser</div>;
 }
 
-const mapStateToProps = (state) => ({})
-
-const mapDispatchToProps = {}
-
-export default connect(mapStateToProps, mapDispatchToProps)(registerUser)
+export default registerUser;
