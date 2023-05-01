@@ -1,0 +1,92 @@
+.LoginContainer {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 50vh;
+  width: 25vw;
+  /* background-color: antiquewhite; */
+}
+
+.loginForm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.RegisterContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 5px;
+  margin-top: 15px;
+  height: 5vh;
+}
+
+.RegisterContainer,
+.LoginContainer {
+  padding: 10px 0px 15px 0px;
+  border-color: #646cff;
+  border-radius: 1px;
+  border-width: 1px;
+  border-style: solid;
+}
+
+.projectInfoContainer {
+  display: flex;
+  flex-direction: column;
+  align-self: baseline;
+  width: 100%;
+}
+
+.projectTitle {
+  width: 100%;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.projectDescription {
+  margin-bottom: 20px;
+}
+
+.loginActions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+}
+
+@media screen and (max-height: 1280px) {
+  .LoginContainer {
+    min-height: 500px;
+  }
+}
+@media screen and (max-width: 1280px) {
+  .LoginContainer {
+    min-width: 500px;
+    width: 65vw;
+    max-width: 70vw;
+  }
+}
+@media screen and (min-width: 1280px) and (max-width: 1440px) {
+  .LoginContainer {
+    width: 60vw;
+    max-width: 65vw;
+  }
+}
+@media screen and (min-width: 1440px) and (max-width: 1920px) {
+  .LoginContainer {
+    width: 50vw;
+    max-width: 55vw;
+  }
+}
+@media screen and (min-width: 1920px) and (max-width: 2520px) {
+  .LoginContainer {
+    width: 40vw;
+    max-width: 45vw;
+  }
+}
