@@ -1,5 +1,5 @@
 import Input from "../components/Input";
-import "../css/Login Page CSS/LoginPage.css";
+import "../css/LoginPage.css";
 import "../App.css";
 import googleLogo from "../assets/Google Logo.png";
 import facebookLogo from "../assets/Facebook Logo.png";
