@@ -1,4 +1,4 @@
-import "../css/input/Input.css";
+import "../css/Input.css";
 
 function Input(props: IInputProps) {
   return (
