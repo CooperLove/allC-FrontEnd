@@ -1,10 +1,30 @@
-import Input from "../components/Input";
-import "../css/Login Page CSS/LoginPage.css";
+import "../css/LoginPage.css";
 import "../App.css";
-import googleLogo from "../assets/Google Logo.png";
-import facebookLogo from "../assets/Facebook Logo.png";
+import { FaGoogle, FaFacebook } from "react-icons/fa";
+import { Button } from "@chakra-ui/button";
+import {
+  Checkbox,
+  Input,
+  InputGroup,
+  InputRightElement,
+} from "@chakra-ui/react";
+import { useColorMode } from "@chakra-ui/color-mode";
+import { useState } from "react";
+import ChakraDrawer from "../components/Drawer";
+import PasswordInput from "../components/PasswordInput";
 
 export const LoginPage = () => {
+  function Example() {
+    const { colorMode, toggleColorMode } = useColorMode();
+    return (
+      <header>
+        <Button onClick={toggleColorMode}>
+          Toggle {colorMode === "light" ? "Dark" : "Light"}
+        </Button>
+      </header>
+    );
+  }
+
   return (
     <div>
       <div className="LoginContainer">
@@ -15,43 +35,35 @@ export const LoginPage = () => {
               Aplicação para gerenciamento de contatos
             </span>
           </div>
-          <Input placeholder="Email" required={true} />
-          <Input placeholder="Senha" isPassword={true} required={true} />
+          <Input
+            placeholder="Email"
+            _placeholder={{ opacity: 1, color: "gray.500" }}
+          />
+          <PasswordInput placeholder="Senha" />
           <div className="loginActions">
-            <div className="rememberLoginSection">
-              <input type="checkbox" />
-              <span>Lembrar Informações ?</span>
-            </div>
-            <button className="transparentButton" type="submit">
-              Entrar
-            </button>
+            <Checkbox colorScheme="green" defaultChecked>
+              Lembrar informações?
+            </Checkbox>
+            <Button>Entrar</Button>
           </div>
         </form>
         <span>Ou</span>
-        <button className="transparentButton">
-          <img
-            src={googleLogo}
-            alt=""
-            width={"20px"}
-            style={{ paddingRight: 10 }}
-          />
+        <Button colorScheme="gray" leftIcon={<FaGoogle />}>
           Entrar com Google
-        </button>
-        <button className="transparentButton">
-          <img
-            src={facebookLogo}
-            alt=""
-            width={"20px"}
-            style={{ paddingRight: 10 }}
-          />
+        </Button>
+        <Button colorScheme="facebook" leftIcon={<FaFacebook />}>
           Entrar com Facebook
-        </button>
-        <a href="">Esqueceu a senha ?</a>
+        </Button>
+        <Button variant="link" className="linkButton">
+          Esqueceu a senha ?
+        </Button>
       </div>
       <div className="RegisterContainer">
         <span>Não tem uma conta ? </span>
-        <a href="">Registre-se</a>
+        <ChakraDrawer />
+        {/* <a href="">Registre-se</a> */}
       </div>
+      {Example()}
     </div>
   );
 };
