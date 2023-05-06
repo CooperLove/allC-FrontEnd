@@ -34,6 +34,20 @@ h1 {
   line-height: 1.1;
 }
 
+.linkButton,
+.linkButton:focus,
+.linkButton:focus-visible {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  fill: #ffffff;
+}
+
+.linkButton:hover {
+  color: #646cff;
+  background-color: transparent;
+}
+
 button {
   border-radius: 8px;
   /* border: 1px solid transparent; */
