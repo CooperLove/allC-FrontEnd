@@ -1,14 +1,12 @@
 import "./App.css";
 import LoginPage from "./pages/LoginPage";
-import RegisterUserPage from "./pages/RegisterUserPage";
-
+import { ChakraProvider } from "@chakra-ui/react";
 function App() {
   return (
-    <>
-      {/* <LoginPage /> */}
-      <RegisterUserPage />
+    <ChakraProvider>
+      <LoginPage />
       <footer className="footer">v1.0</footer>
-    </>
+    </ChakraProvider>
   );
 }
 
