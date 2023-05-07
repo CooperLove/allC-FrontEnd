@@ -1,12 +1,7 @@
 import { Button } from "@chakra-ui/button";
 import { FormLabel } from "@chakra-ui/form-control";
 import { useDisclosure } from "@chakra-ui/hooks";
-import {
-  Input,
-  InputGroup,
-  InputLeftAddon,
-  InputRightAddon,
-} from "@chakra-ui/input";
+import { Input } from "@chakra-ui/input";
 import { Box, Stack } from "@chakra-ui/layout";
 import {
   Drawer,
@@ -17,15 +12,21 @@ import {
   DrawerHeader,
   DrawerOverlay,
 } from "@chakra-ui/modal";
-import { Select } from "@chakra-ui/select";
-import { Textarea } from "@chakra-ui/textarea";
-import React from "react";
-import { GrAdd } from "react-icons/gr";
 import PasswordInput from "./PasswordInput";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { IUserData, setUser } from "../reducers/userReducer";
 
 function ChakraDrawer() {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const firstField = React.useRef();
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  let user: IUserData = {};
+
+  const createUser = () => {
+    dispatch(setUser(user));
+    navigate("/home");
+  };
 
   return (
     <>
@@ -55,7 +56,12 @@ function ChakraDrawer() {
               <Stack spacing="24px">
                 <Box>
                   <FormLabel htmlFor="registration-username">Nome</FormLabel>
-                  <Input id="username" isRequired placeholder="Nome Completo" />
+                  <Input
+                    id="username"
+                    isRequired
+                    placeholder="Nome Completo"
+                    onChange={(e) => (user.fullName = e.target.value)}
+                  />
                 </Box>
 
                 <Box>
@@ -64,6 +70,7 @@ function ChakraDrawer() {
                     id="email"
                     isRequired
                     placeholder="Ex.: exemplo@exemplo.com"
+                    onChange={(e) => (user.email = e.target.value)}
                   />
                 </Box>
 
@@ -72,16 +79,22 @@ function ChakraDrawer() {
                     Telefone
                   </FormLabel>
                   <Input
-                    id="email"
+                    id="cellphone"
                     isRequired
                     placeholder="Ex.: (88) 9 1234-5678"
+                    onChange={(e) => (user.phoneNumber = e.target.value)}
                   />
                 </Box>
 
                 <Stack direction={"row"} justifyContent={"space-between"}>
                   <Box flexGrow={1}>
                     <FormLabel htmlFor="registration-city">Cidade</FormLabel>
-                    <Input id="email" isRequired placeholder="Ex.: Fortaleza" />
+                    <Input
+                      id="city"
+                      isRequired
+                      placeholder="Ex.: Fortaleza"
+                      onChange={(e) => (user.city = e.target.value)}
+                    />
                   </Box>
 
                   <Box flexGrow={1}>
@@ -89,9 +102,10 @@ function ChakraDrawer() {
                       Endereço
                     </FormLabel>
                     <Input
-                      id="email"
+                      id="address"
                       isRequired
                       placeholder="Ex.: Rua Joaquim Chagas Filho"
+                      onChange={(e) => (user.address = e.target.value)}
                     />
                   </Box>
                 </Stack>
@@ -117,7 +131,7 @@ function ChakraDrawer() {
             <Button variant="outline" mr={3} onClick={onClose}>
               Cancelar
             </Button>
-            <Button colorScheme="blue" type="submit" form="registerUserForm">
+            <Button colorScheme="blue" onClick={() => createUser()}>
               Cadastrar
             </Button>
           </DrawerFooter>
