@@ -9,9 +9,10 @@ import {
   InputRightElement,
 } from "@chakra-ui/react";
 import { useColorMode } from "@chakra-ui/color-mode";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ChakraDrawer from "../components/Drawer";
 import PasswordInput from "../components/PasswordInput";
+import { useNavigate, Navigate, Link } from "react-router-dom";
 
 export const LoginPage = () => {
   function Example() {
@@ -28,7 +29,7 @@ export const LoginPage = () => {
   return (
     <div>
       <div className="LoginContainer">
-        <form className="loginForm" action="">
+        <form className="loginForm" action="/home">
           <div className="projectInfoContainer">
             <span className="projectTitle">all-C</span>
             <span className="projectDescription">
@@ -44,7 +45,7 @@ export const LoginPage = () => {
             <Checkbox colorScheme="green" defaultChecked>
               Lembrar informações?
             </Checkbox>
-            <Button>Entrar</Button>
+            <Button type="submit">Entrar</Button>
           </div>
         </form>
         <span>Ou</span>
