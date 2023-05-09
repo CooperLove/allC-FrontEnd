@@ -97,7 +97,6 @@ function ChakraDrawer() {
                       name="state"
                       isRequired
                       placeholder="Ex.: Ceará"
-
                       onChange={(e) => (user.city = e.target.value)}
                     />
                   </Box>
@@ -164,9 +163,30 @@ function ChakraDrawer() {
                       isRequired
                       placeholder="158"
                       onChange={(e) => (user.address = e.target.value)}
-                      id="address"
+                      id="address"             
+                    />
+                  </Box>
+                  <Box flexGrow={1}>
+                    <FormLabel htmlFor="registration-district">
+                      Bairro
+                    </FormLabel>
+                    <Input
+                      id="district"
+                      name="district"
                       isRequired
-                      placeholder="Ex.: Rua Joaquim Chagas Filho"
+                      placeholder="Ex.: Centro"
+                      onChange={(e) => (user.address = e.target.value)}
+                    />
+                  </Box>
+                  <Box flexShrink={1}>
+                    <FormLabel htmlFor="registration-house-number">
+                      Número
+                    </FormLabel>
+                    <Input
+                      id="houseNumber"
+                      name="houseNumber"
+                      isRequired
+                      placeholder="Ex.: 158"
                       onChange={(e) => (user.address = e.target.value)}
                     />
                   </Box>

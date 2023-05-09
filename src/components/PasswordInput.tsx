@@ -4,7 +4,6 @@ import { useState } from "react";
 import { GrFormView, GrFormViewHide } from "react-icons/gr";
 import "../index.css";
 import { IconContext } from "react-icons";
-import { Icon } from "@chakra-ui/icon";
 
 function PasswordInput(props: IPasswordInputProps) {
   const [show, setShow] = useState(false);
