@@ -27,6 +27,8 @@ function PasswordInput(props: IPasswordInputProps) {
           size="lg"
           onClick={handleClick}
           backgroundColor={"transparent"}
+          id={props.id}
+          name={props.name}
           leftIcon={
             show ? (
               <IconContext.Provider

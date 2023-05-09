@@ -58,6 +58,7 @@ function ChakraDrawer() {
                   <FormLabel htmlFor="registration-username">Nome</FormLabel>
                   <Input
                     id="username"
+                    name="username"
                     isRequired
                     placeholder="Nome Completo"
                     onChange={(e) => (user.fullName = e.target.value)}
@@ -68,6 +69,7 @@ function ChakraDrawer() {
                   <FormLabel htmlFor="registration-email">Email</FormLabel>
                   <Input
                     id="email"
+                    name="email"
                     isRequired
                     placeholder="Ex.: exemplo@exemplo.com"
                     onChange={(e) => (user.email = e.target.value)}
@@ -80,6 +82,7 @@ function ChakraDrawer() {
                   </FormLabel>
                   <Input
                     id="cellphone"
+                    name="cellphone"
                     isRequired
                     placeholder="Ex.: (88) 9 1234-5678"
                     onChange={(e) => (user.phoneNumber = e.target.value)}
@@ -88,20 +91,60 @@ function ChakraDrawer() {
 
                 <Stack direction={"row"} justifyContent={"space-between"}>
                   <Box flexGrow={1}>
-                    <FormLabel htmlFor="registration-city">Cidade</FormLabel>
+                    <FormLabel htmlFor="registration-city">Estado</FormLabel>
                     <Input
-                      id="city"
+                      id="state"
+                      name="state"
                       isRequired
                       placeholder="Ex.: Fortaleza"
                       onChange={(e) => (user.city = e.target.value)}
                     />
                   </Box>
+                  <Box flexGrow={2}>
+                    <FormLabel htmlFor="registration-city">Cidade</FormLabel>
+                    <Input
+                      id="city"
+                      name="city"
+                      isRequired
+                      placeholder="Ex.: Fortaleza"
+                      onChange={(e) => (user.city = e.target.value)}
+                    />
+                  </Box>
+                </Stack>
 
+                <Stack direction={"row"}>
                   <Box flexGrow={1}>
-                    <FormLabel htmlFor="registration-address">
-                      Endereço
+                    <FormLabel htmlFor="registration-street">Rua</FormLabel>
+                    <Input
+                      id="street"
+                      name="street"
+                      isRequired
+                      placeholder="Ex.: Rua Joaquim Chagas Filho"
+                      onChange={(e) => (user.address = e.target.value)}
+                    />
+                  </Box>
+                  <Box flexGrow={1}>
+                    <FormLabel htmlFor="registration-district">
+                      Bairro
                     </FormLabel>
                     <Input
+                      id="district"
+                      name="district"
+                      isRequired
+                      placeholder="Ex.: Rua Joaquim Chagas Filho"
+                      onChange={(e) => (user.address = e.target.value)}
+                    />
+                  </Box>
+                  <Box flexShrink={1}>
+                    <FormLabel htmlFor="registration-house-number">
+                      Número
+                    </FormLabel>
+                    <Input
+                      id="houseNumber"
+                      name="houseNumber"
+                      isRequired
+                      placeholder="158"
+                      onChange={(e) => (user.address = e.target.value)}
                       id="address"
                       isRequired
                       placeholder="Ex.: Rua Joaquim Chagas Filho"
@@ -113,14 +156,22 @@ function ChakraDrawer() {
                 <Stack direction={"row"} justifyContent={"space-between"}>
                   <Box flexGrow={1}>
                     <FormLabel htmlFor="registration-password">Senha</FormLabel>
-                    <PasswordInput placeholder="Senha" />
+                    <PasswordInput
+                      id="password"
+                      name="password"
+                      placeholder="Senha"
+                    />
                   </Box>
 
                   <Box flexGrow={1}>
                     <FormLabel htmlFor="registration-confirm-password">
                       Confirmar Senha
                     </FormLabel>
-                    <PasswordInput placeholder="Confirmar Senha" />
+                    <PasswordInput
+                      id="confirmPassword"
+                      name="confirmPassword"
+                      placeholder="Confirmar Senha"
+                    />
                   </Box>
                 </Stack>
               </Stack>
