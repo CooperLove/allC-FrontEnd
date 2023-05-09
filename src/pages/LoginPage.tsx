@@ -2,18 +2,20 @@ import "../css/LoginPage.css";
 import "../App.css";
 import { FaGoogle, FaFacebook } from "react-icons/fa";
 import { Button } from "@chakra-ui/button";
-import {
-  Checkbox,
-  Input,
-  InputGroup,
-  InputRightElement,
-} from "@chakra-ui/react";
+import { Checkbox, Input } from "@chakra-ui/react";
 import { useColorMode } from "@chakra-ui/color-mode";
-import { useState } from "react";
 import ChakraDrawer from "../components/Drawer";
 import PasswordInput from "../components/PasswordInput";
+import { useNavigate } from "react-router-dom";
+import { setUser, IUserData } from "../reducers/userReducer";
+import { useSelector, useDispatch } from "react-redux";
+import { RootState } from "../store/index.ts";
 
 export const LoginPage = () => {
+  const navigate = useNavigate();
+  const user = useSelector((state: RootState) => state.userData);
+  const dispatch = useDispatch();
+
   function Example() {
     const { colorMode, toggleColorMode } = useColorMode();
     return (
@@ -28,7 +30,7 @@ export const LoginPage = () => {
   return (
     <div>
       <div className="LoginContainer">
-        <form className="loginForm" action="">
+        <form className="loginForm">
           <div className="projectInfoContainer">
             <span className="projectTitle">all-C</span>
             <span className="projectDescription">
@@ -37,14 +39,23 @@ export const LoginPage = () => {
           </div>
           <Input
             placeholder="Email"
+            required
             _placeholder={{ opacity: 1, color: "gray.500" }}
           />
-          <PasswordInput placeholder="Senha" />
+          <PasswordInput required placeholder="Senha" />
           <div className="loginActions">
             <Checkbox colorScheme="green" defaultChecked>
               Lembrar informações?
             </Checkbox>
-            <Button>Entrar</Button>
+            <Button
+              onClick={() => {
+                let newData: IUserData = { ...user.data, email: "dsadsa" };
+                dispatch(setUser(newData));
+                navigate("/home");
+              }}
+            >
+              Entrar
+            </Button>
           </div>
         </form>
         <span>Ou</span>
@@ -64,6 +75,8 @@ export const LoginPage = () => {
         {/* <a href="">Registre-se</a> */}
       </div>
       {Example()}
+      <h4>Username: {user.data.fullName}</h4>
+      <h4>Email: {user.data.email}</h4>
     </div>
   );
 };
