@@ -145,6 +145,10 @@ function ChakraDrawer() {
                       isRequired
                       placeholder="Ex.: 158"
                       onChange={(e) => (user.address = e.target.value)}
+                      id="address"
+                      isRequired
+                      placeholder="Ex.: Rua Joaquim Chagas Filho"
+                      onChange={(e) => (user.address = e.target.value)}
                     />
                   </Box>
                 </Stack>
