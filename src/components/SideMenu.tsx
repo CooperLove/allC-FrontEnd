@@ -1,12 +1,17 @@
+
+import "../css/SideMenu.css";
+
 import { Box, Button, Divider } from "@chakra-ui/react";
 import {
   AiOutlineHome,
   AiOutlineSetting,
   AiOutlineMessage,
   AiOutlineSearch,
+
 } from "react-icons/ai/index.js";
 import { IoMdNotificationsOutline } from "react-icons/io/index.js";
 import { useNavigate } from "react-router-dom";
+
 
 function SideMenu() {
   const navigate = useNavigate();
