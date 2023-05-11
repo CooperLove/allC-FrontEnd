@@ -7,7 +7,6 @@ import {
 } from "react-icons/ai/index.js";
 import { IoMdNotificationsOutline } from "react-icons/io/index.js";
 import { useNavigate } from "react-router-dom";
-import "../css/SideMenu.css";
 
 function SideMenu() {
   const navigate = useNavigate();
