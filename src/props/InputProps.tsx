@@ -1,4 +1,4 @@
-interface IInputProps {
+export interface IInputProps {
   placeholder: string;
   isPassword?: boolean | false;
   isPhone?: boolean | false;

@@ -5,7 +5,7 @@ import "./index.css";
 import { ColorModeScript } from "@chakra-ui/color-mode";
 import theme from "../src/chakra/theme.ts";
 import { Provider } from "react-redux";
-import { store } from "./store/index";
+import { store } from "./store/index.ts";
 import { BrowserRouter } from "react-router-dom";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(

@@ -1,13 +1,13 @@
 import "../css/LoginPage.css";
 import "../App.css";
-import { FaGoogle, FaFacebook } from "react-icons/fa";
+import { FaGoogle, FaFacebook } from "react-icons/fa/index.js";
 import { Button } from "@chakra-ui/button";
 import { Checkbox, Input } from "@chakra-ui/react";
 import { useColorMode } from "@chakra-ui/color-mode";
-import ChakraDrawer from "../components/Drawer";
-import PasswordInput from "../components/PasswordInput";
+import ChakraDrawer from "../components/Drawer.tsx";
+import PasswordInput from "../components/PasswordInput.tsx";
 import { useNavigate } from "react-router-dom";
-import { setUser, IUserData } from "../reducers/userReducer";
+import { setUser, IUserData } from "../reducers/userReducer.ts";
 import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "../store/index.ts";
 
@@ -39,10 +39,10 @@ export const LoginPage = () => {
           </div>
           <Input
             placeholder="Email"
-            required
-            _placeholder={{ opacity: 1, color: "gray.500" }}
+            required={true}
+            // _placeholder={{ opacity: 1, color: "gray.500" }}
           />
-          <PasswordInput required placeholder="Senha" />
+          <PasswordInput required={true} placeholder="Senha" />
           <div className="loginActions">
             <Checkbox colorScheme="green" defaultChecked>
               Lembrar informações?
