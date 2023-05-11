@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "../css/Input.css";
+import { IInputProps } from "../props/InputProps.tsx";
 
 function Input(props: IInputProps) {
   let phoneNumber: string;

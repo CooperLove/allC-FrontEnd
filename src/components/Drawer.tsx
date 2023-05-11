@@ -12,10 +12,10 @@ import {
   DrawerHeader,
   DrawerOverlay,
 } from "@chakra-ui/modal";
-import PasswordInput from "./PasswordInput";
+import PasswordInput from "./PasswordInput.tsx";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { IUserData, setUser } from "../reducers/userReducer";
+import { IUserData, setUser } from "../reducers/userReducer.ts";
 
 function ChakraDrawer() {
   const { isOpen, onOpen, onClose } = useDisclosure();

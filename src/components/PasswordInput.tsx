@@ -1,9 +1,10 @@
 import { Button } from "@chakra-ui/button";
 import { Input, InputGroup, InputRightElement } from "@chakra-ui/input";
 import { useState } from "react";
-import { GrFormView, GrFormViewHide } from "react-icons/gr";
+import { GrFormView, GrFormViewHide } from "react-icons/gr/index.js";
 import "../index.css";
 import { IconContext } from "react-icons";
+import { IPasswordInputProps } from "../props/IPasswordInputProps.ts";
 
 function PasswordInput(props: IPasswordInputProps) {
   const [show, setShow] = useState(false);
@@ -14,7 +15,7 @@ function PasswordInput(props: IPasswordInputProps) {
       <Input
         pr="4.5rem"
         type={show ? "text" : "password"}
-        isRequired={props.required}
+        required={props.required}
         maxLength={props.maxLength}
         placeholder={props.placeholder}
         // _placeholder={{ opacity: 1, color: "gray.500" }}

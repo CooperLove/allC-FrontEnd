@@ -1,4 +1,4 @@
-interface IPasswordInputProps {
+export interface IPasswordInputProps {
   id?: string;
   name?: string;
   placeholder: string;

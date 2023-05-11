@@ -8,9 +8,9 @@ import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import { lazy, Suspense } from "react";
 
-const LoginPage = lazy(() => import("./pages/LoginPage"));
-const HomePage = lazy(() => import("./pages/HomePage"));
-const ProfilePage = lazy(() => import("./pages/ProfilePage"));
+const LoginPage = lazy(() => import("./pages/LoginPage.tsx"));
+const HomePage = lazy(() => import("./pages/HomePage.tsx"));
+const ProfilePage = lazy(() => import("./pages/ProfilePage.tsx"));
 
 function App() {
   return (
