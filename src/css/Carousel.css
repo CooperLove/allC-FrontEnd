@@ -1,0 +1,17 @@
+.carousel__main-container {
+  width: calc(100vw);
+  height: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3em;
+  /* background-color: chocolate; */
+}
+
+.carousel__section-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  /* background-color: black; */
+}

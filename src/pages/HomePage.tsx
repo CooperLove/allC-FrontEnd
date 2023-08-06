@@ -1,22 +1,25 @@
 import { useSelector } from "react-redux";
 import { RootState } from "../store/index.ts";
-import SideMenu from "../components/SideMenu.tsx";
 import "../css/HomePage.css";
+import Header from "../components/Header.tsx";
+import Carousel from "../components/Carousel.tsx";
+import SectionCard from "../components/SectionCard.tsx";
+import "../css/SectionsContainer.css";
 
 function HomePage() {
   const user = useSelector((state: RootState) => state.userData);
   console.log(user.data);
   return (
     <div className="homePage-Container">
-      <SideMenu />
-      <div className="homePage__Content-Container">Home Page</div>
-      {Object.keys(user.data).map((k, index) => {
-        return (
-          <h4 key={index}>
-            Key {k} {Object.values(user.data).at(index)}
-          </h4>
-        );
-      })}
+      <Header />
+      <Carousel />
+      <div className="sectionsContainer__main-container">
+        <SectionCard />
+        <SectionCard />
+        <SectionCard />
+        <SectionCard />
+        <SectionCard />
+      </div>
     </div>
   );
 }
